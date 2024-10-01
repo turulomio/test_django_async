@@ -2,7 +2,7 @@
   "header": {
     "comment": "eric project file for project test_django_async",
     "copyright": "Copyright (C) 2024 , ",
-    "saved": "2024-10-01, 07:09:03"
+    "saved": "2024-10-01, 08:54:29"
   },
   "project": {
     "AUTHOR": "",
@@ -59,7 +59,8 @@
     "OTHERS": [
       ".gitignore",
       "README.md",
-      "pyproject.toml"
+      "pyproject.toml",
+      "test_django_async.epj"
     ],
     "OTHERTOOLSPARMS": {},
     "PACKAGERSPARMS": {},
@@ -74,15 +75,16 @@
     },
     "RESOURCES": [],
     "SOURCES": [
-      "__init__.py",
-      "async/__init__.py",
-      "async/admin.py",
-      "async/apps.py",
-      "async/migrations/__init__.py",
-      "async/models.py",
-      "async/tests.py",
-      "async/views.py",
       "manage.py",
+      "test_async/__init__.py",
+      "test_async/admin.py",
+      "test_async/apps.py",
+      "test_async/management/commands/runserver_asgi.py",
+      "test_async/migrations/__init__.py",
+      "test_async/models.py",
+      "test_async/serializers.py",
+      "test_async/tests.py",
+      "test_async/views.py",
       "test_django_async/__init__.py",
       "test_django_async/asgi.py",
       "test_django_async/settings.py",
