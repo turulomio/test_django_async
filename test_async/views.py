@@ -1,13 +1,12 @@
 from rest_framework import viewsets
 from test_async import models, serializers
-from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
 from time import monotonic
 from functools import wraps
-
+import asyncio
 
 def execution_time_api_view(view_method):
     """Decorador para medir y mostrar el tiempo de ejecución de un método de APIView."""
@@ -44,16 +43,18 @@ class CreateRecordsView(APIView):
 class CreateRecordsViewAsync(APIView):
     
     @execution_time_api_view
-    async def post(self, request):
+    def post(self, request):
         """Crea 1000 registros de forma asíncrona."""
         
 
         async def create_records_task():
             for i in range(1000):
-                await models.MyModelMyModel.objects.acreate(
+                await models.MyModel.objects.acreate(
                     name=f'Test Name {i}',
                     date='2024-01-01'
                 )
+                print(i)
             
-        await create_records_task()
+        
+        asyncio.run(create_records_task())
         return Response(status=status.HTTP_201_CREATED)
