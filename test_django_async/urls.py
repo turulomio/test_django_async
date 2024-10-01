@@ -7,4 +7,6 @@ router.register(r'mymodel', views.MyModelViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
+    path('create_records/', views.CreateRecordsView.as_view()),
+    path('create_records_async/', views.CreateRecordsViewAsync.as_view()),
 ]

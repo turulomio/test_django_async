@@ -21,3 +21,7 @@ class MyModelAPITestCase(APITestCase):
         response = client.get('/api/mymodel/')  # Reemplaza '/mymodels/' con la URL de tu API
         self.assertEqual(response.status_code, 200)  # Verifica que la solicitud fue exitosa
         self.assertEqual(len(response.data), 1000)  # Verifica que se obtuvieron 1000 registros
+        
+        
+        response = client.post('/create_records/')  # Reemplaza '/mymodels/' con la URL de tu API
+        response = client.post('/create_records_async/')  # Reemplaza '/mymodels/' con la URL de tu API
